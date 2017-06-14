@@ -1,0 +1,96 @@
+---------------------------- xaml.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace PFV
+{
+    /// <summary>
+    /// Interação lógica para MainWindow.xam
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+                
+        }
+
+        private void txt1cert_LostFocus(object sender, RoutedEventArgs e)
+        {
+            double cert1 = Convert.ToDouble(txt1cert.Text) * 3;
+            txtmedia1.Text = Convert.ToString(cert1);
+
+        }
+
+        private void txtmedia1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void txt2cert_LostFocus(object sender, RoutedEventArgs e)
+        {
+            double cert2 = Convert.ToDouble(txt2cert.Text) * 3;
+            txtmedia2.Text = Convert.ToString(cert2);
+            
+        }
+
+        private void txt3cert_LostFocus(object sender, RoutedEventArgs e)
+        {
+            double cert3 = Convert.ToDouble(txt3cert.Text) * 4;
+            txtmedia3.Text = Convert.ToString(cert3);
+            double mediaAnual = (Convert.ToDouble(txtmedia1.Text) + Convert.ToDouble(txtmedia2.Text) + Convert.ToDouble(txtmedia3.Text)) / 10;
+            txtmediaAnual.Text = Convert.ToString(mediaAnual);
+            if (mediaAnual < 7)
+            {
+                double pfv = (25 - (Convert.ToDouble(txtmediaAnual.Text) * 3)) / 3;
+                txtpfv.Text = Convert.ToString(pfv);
+            }
+        }
+
+        
+    }
+}
+
+
+---------------------------- xaml
+
+<Window x:Class="PFV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calculadora CPII" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="162*"/>
+            <ColumnDefinition Width="355*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lbl1c" Content="1ªCert. :" HorizontalAlignment="Left" Margin="16,31,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl2c" Content="2ªCert. :" HorizontalAlignment="Left" Margin="16,75,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl3c" Content="3ªCert. :" HorizontalAlignment="Left" Margin="16,117,0,0" VerticalAlignment="Top"/>
+        <Label Content="Média Anual:" HorizontalAlignment="Left" Margin="28,169,0,0" VerticalAlignment="Top"/>
+        <Label Content="Preciso:" HorizontalAlignment="Left" Margin="30,169,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="txt1cert" HorizontalAlignment="Left" Height="23" Margin="72,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" LostFocus="txt1cert_LostFocus" />
+        <TextBox x:Name="txt2cert" HorizontalAlignment="Left" Height="23" Margin="73,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" LostFocus="txt2cert_LostFocus" />
+        <TextBox x:Name="txt3cert" HorizontalAlignment="Left" Height="23" Margin="72,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" LostFocus="txt3cert_LostFocus" />
+        <Label Content="x3 = " HorizontalAlignment="Left" Margin="129,34,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="x3 = " HorizontalAlignment="Left" Margin="130,75,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="x4 = " HorizontalAlignment="Left" Margin="129,114,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.364,1.962" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtmediaAnual" HorizontalAlignment="Left" Height="23" Margin="112,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtpfv" HorizontalAlignment="Left" Height="23" Margin="85,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Column="1" IsEnabled="False"/>
+        <TextBox x:Name="txtmedia1" HorizontalAlignment="Left" Height="23" Margin="9,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" RenderTransformOrigin="0.404,0.478" Grid.Column="1" LostFocus="txtmedia1_LostFocus" IsEnabled="False" />
+        <TextBox x:Name="txtmedia2" HorizontalAlignment="Left" Height="23" Margin="10,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Column="1" IsEnabled="False"/>
+        <TextBox x:Name="txtmedia3" HorizontalAlignment="Left" Height="23" Margin="9,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Column="1" IsEnabled="False"/>
+
+    </Grid>
+</Window>

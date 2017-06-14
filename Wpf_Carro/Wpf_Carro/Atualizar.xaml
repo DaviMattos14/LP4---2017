@@ -1,0 +1,17 @@
+﻿<Window x:Class="Wpf_Carro.Atualizar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Atualizar" Height="315.584" Width="509.416">
+    <Grid>
+        <Label x:Name="label" Content="Alterar Dono: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="102"/>
+        <Label x:Name="label1" Content="Placa: " HorizontalAlignment="Left" Margin="15,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Dono: " HorizontalAlignment="Left" Margin="15,71,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPlaca" HorizontalAlignment="Left" Height="23" Margin="63,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDono" HorizontalAlignment="Left" Height="23" Margin="65,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dGtabela" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top" Height="265" Width="289"/>
+        <Button x:Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Left" Margin="15,200,0,0" VerticalAlignment="Top" Width="75" Click="btnAtualizar_Click"/>
+        <Button x:Name="btnDeletar" Content="Deletar" HorizontalAlignment="Left" Margin="110,200,0,0" VerticalAlignment="Top" Width="75" Click="btnDeletar_Click"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="63,247,0,0" VerticalAlignment="Top" Width="75" Click="btnExit_Click"/>
+
+    </Grid>
+</Window>

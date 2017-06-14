@@ -1,0 +1,68 @@
+﻿<Window x:Class="LP4_4O.Cadastro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastro" Height="453" Width="419">
+    <Grid>
+        <Label x:Name="lbl_CadNome" Content="Nome:" HorizontalAlignment="Left" Height="27" Margin="35,37,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="lbl_CadClass" Content="Classe:" HorizontalAlignment="Left" Height="29" Margin="35,88,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="lbl_CadRaca" Content="Raça:" HorizontalAlignment="Left" Height="26" Margin="35,130,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="lbl_Tendencia" Content="Tendência:" HorizontalAlignment="Left" Height="27" Margin="30,221,0,0" VerticalAlignment="Top" Width="109"/>
+        <ComboBox x:Name="cb_Classe" HorizontalAlignment="Left" Height="26" Margin="144,88,0,0" VerticalAlignment="Top" Width="161" BorderBrush="Black" Foreground="Black" Background="{x:Null}">
+            <ComboBoxItem x:Name="cbi_Barbaro" Content="Bárbaro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Bardo" Content="Bardo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Bruxo" Content="Bruxo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Clerigo" Content="Clérigo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Druida" Content="Druida" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Feiticeiro" Content="Feiticeiro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Guerreiro" Content="Guerreiro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Ladino" Content="Ladino" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Mago" Content="Mago" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Monge" Content="Monge" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Paladino" Content="Paladino" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_Patrulheiro" Content="Patrulheiro" HorizontalAlignment="Left" Width="159"/>
+        </ComboBox>
+        <TextBox x:Name="txt_Nome" HorizontalAlignment="Left" Height="27" Margin="144,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <ComboBox x:Name="cb_Raca" HorizontalAlignment="Left" Height="26" Margin="144,130,0,0" VerticalAlignment="Top" Width="161" Background="{x:Null}" SelectionChanged="cb_Raca_SelectionChanged">
+            <ComboBoxItem x:Name="cb_Anao" Content="Anão" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Elfo" Content="Elfo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Halfling" Content="Halfling" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Humano" Content="Humano" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Draconato" Content="Draconato" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Gnomo" Content="Gnomo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_MeioElfo" Content="Meio-Elfo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_MeioOrc" Content="Meio-Orc" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Tiefling" Content="Tiefling" HorizontalAlignment="Left" Width="159"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Height="27" Margin="144,221,0,0" VerticalAlignment="Top" Width="161" Background="{x:Null}">
+            <ComboBoxItem x:Name="cbi_LB" Content="Leal e Bom" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_LN" Content="Leal e Neutro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_LM" Content="Leal e Mal" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_NB" Content="Neutro e Bom" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_NN" Content="Neutro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_NM" Content="Neutro e Mal" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_CB" Content="Caótico e Bom" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_CN" Content="Caótico e Neutro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cbi_CM" Content="Caótico e Mal" HorizontalAlignment="Left" Width="159"/>
+        </ComboBox>
+        <Button x:Name="btn_CadCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Height="27" Margin="30,355,0,0" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.494,0.593"/>
+        <Label x:Name="lbl_Antecedente" Content="Antecedente:" HorizontalAlignment="Left" Height="25" Margin="30,277,0,0" VerticalAlignment="Top" Width="109"/>
+        <ComboBox x:Name="cb_Subraca" HorizontalAlignment="Left" Height="26" Margin="144,173,0,0" VerticalAlignment="Top" Width="161" Background="{x:Null}"/>
+        <Label x:Name="lbl_Subraca" Content="Sub-raça" HorizontalAlignment="Left" Height="26" Margin="35,173,0,0" VerticalAlignment="Top" Width="109"/>
+        <ComboBox HorizontalAlignment="Left" Height="25" Margin="144,277,0,0" VerticalAlignment="Top" Width="161" Background="{x:Null}">
+            <ComboBoxItem x:Name="cb_Acolito" Content="Acólito" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_ArtesaodaGuilda" Content="Artesão da Guilda" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Artista" Content="Artista" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Charlatao" Content="Charlatão" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Criminoso" Content="Criminoso" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Eremita" Content="Eremita" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Forasteiro" Content="Forasteiro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_HeroidoPovo" Content="Herói do Povo" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Marinheiro" Content="Marinheiro" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Nobre" Content="Nobre" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Orfao" Content="Orfão" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Sabio" Content="Sábio" HorizontalAlignment="Left" Width="159"/>
+            <ComboBoxItem x:Name="cb_Soldado" Content="Soldado" HorizontalAlignment="Left" Width="159"/>
+        </ComboBox>
+
+    </Grid>
+</Window>
